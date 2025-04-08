@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import classes from './Post.module.css';
 
-const names = ['cham', 'john'];
+interface PostProps {
+    author: string;
+    body: string;
+}
 
-function Post() {
-    const choesenName = Math.random() > 0.5 ? names[0] : names[1];
-    
+function Post({ author, body }: PostProps) {
     return (
-        <div>
-            <p>{choesenName}</p>
-            <p>React is awesome!</p>
+        <div className={classes.post}>
+            <p className={classes.author}>{author}</p>
+            <p className={classes.text}>{body}</p>
         </div>
     );
 }
